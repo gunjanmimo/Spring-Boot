@@ -1,9 +1,14 @@
 package com.example.demo.dependency_demo;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Customers {
     private int custId;
     private String cusrName;
     private String courseName;
+
+    private Technologies techDetails;
 
     public int getCustId() {
         return custId;
@@ -31,5 +36,13 @@ public class Customers {
 
     public void display() {
         System.out.println("customers object returned sucessfully");
+    }
+
+    public Technologies getTechDetails() {
+        return techDetails;
+    }
+
+    public void setTechDetails(Technologies techDetails) {
+        this.techDetails = techDetails;
     }
 }
