@@ -2,12 +2,14 @@ package com.example.demo.dependency_demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class DependencyDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DependencyDemoApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(DependencyDemoApplication.class, args);
+		Customers c = context.getBean(Customers.class);
 	}
 
 }
