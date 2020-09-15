@@ -1,5 +1,6 @@
 package com.example.demo.dependency_demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -7,7 +8,7 @@ public class Customers {
     private int custId;
     private String cusrName;
     private String courseName;
-
+    @Autowired
     private Technologies techDetails;
 
     public int getCustId() {
@@ -44,5 +45,6 @@ public class Customers {
 
     public void setTechDetails(Technologies techDetails) {
         this.techDetails = techDetails;
+        techDetails.tech();
     }
 }
