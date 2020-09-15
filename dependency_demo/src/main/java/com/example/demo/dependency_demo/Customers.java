@@ -29,4 +29,7 @@ public class Customers {
         this.courseName = courseName;
     }
 
+    public void display() {
+        System.out.println("customers object returned sucessfully");
+    }
 }
