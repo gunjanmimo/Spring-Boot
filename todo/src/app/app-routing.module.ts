@@ -1,3 +1,4 @@
+import { ListTodoComponent } from './list-todo/list-todo.component';
 import { ErrorComponent } from './error/error.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
@@ -9,7 +10,9 @@ const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "welcome/:name", component: WelcomeComponent },
-  { path: "**", component: ErrorComponent } // error component
+  { path: "todos", component: ListTodoComponent },
+  // error component
+  { path: "**", component: ErrorComponent },
 ];
 
 @NgModule({

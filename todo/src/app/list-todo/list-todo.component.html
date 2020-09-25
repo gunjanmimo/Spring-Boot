@@ -1,1 +1,19 @@
-<p>list-todo works!</p>
+<table border="2">
+  <caption>
+    my todos
+  </caption>
+  <thead style="color: blue">
+    <tr>
+      <th>Description</th>
+      <th>Target Date</th>
+      <th>Done</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <th>{{ todo.description | uppercase }}</th>
+      <th>{{ todo.targetDate | date | uppercase }}</th>
+      <th>{{ todo.done }}</th>
+    </tr>
+  </tbody>
+</table>
