@@ -1,3 +1,5 @@
+import { RouteGuardService } from './service/route-guard.service';
+import { LogoutComponent } from './logout/logout.component';
 import { ListTodoComponent } from './list-todo/list-todo.component';
 import { ErrorComponent } from './error/error.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -9,8 +11,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
-  { path: "welcome/:name", component: WelcomeComponent },
-  { path: "todos", component: ListTodoComponent },
+  { path: "logout", component: LogoutComponent },
+  { path: "welcome/:name", component: WelcomeComponent, canActivate: [RouteGuardService] },
+  { path: "todos", component: ListTodoComponent, canActivate: [RouteGuardService] },
   // error component
   { path: "**", component: ErrorComponent },
 ];

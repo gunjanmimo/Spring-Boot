@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username = ''
-  password = ''
+  username = 'gunjan'
+  password = 'mimo'
   errorMessage = "invalid credentials"
   invalidLogin = false
 
