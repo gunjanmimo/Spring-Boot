@@ -1,9 +1,24 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http";
+
+
+
+export class HelloWorldBeam {
+  constructor(public message: string) { }
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class WelcomeDataService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  excuteHelloWorldBean() {
+    return this.http.get<HelloWorldBeam>('http://localhost:8081/hello-world/path-variable/gunjan')
+  }
 }
