@@ -25,10 +25,12 @@ export class WelcomeComponent implements OnInit {
   getWelcomeMessage() {
     console.log(this.service.excuteHelloWorldBean())
     this.service.excuteHelloWorldBean().subscribe(
-      response => this.handleSuccessfulResponse(response)
-    );
-    console.log("last line of welcome message")
-  }
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    )
+    //console.log("last line of welcome message")
+
+  };
 
 
 
@@ -37,6 +39,11 @@ export class WelcomeComponent implements OnInit {
     //console.log(response.message)
     this.welcomeMessage = response.message
   }
-
+  handleErrorResponse(error) {
+    //console.log(error)
+    console.log(error.error)
+    console.log(error.error.message)
+    this.welcomeMessage = error.error.message
+  }
 
 }
