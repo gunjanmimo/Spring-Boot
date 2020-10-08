@@ -1,2 +1,16 @@
 <h2 class="alert alert-success">Welcome {{ name | titlecase }}</h2>
 <h4>Manage all your <a routerLink="/todos">todos</a></h4>
+
+<div>
+  <h2>
+    Click here to get a customized welcome message
+    <button (click)="getWelcomeMessage()" class="btn btn-primary">
+      Get welcome message
+    </button>
+  </h2>
+  <br />
+  <h2 *ngIf="welcomeMessage">
+    your customized welcome message
+    <span class="alert alert-success"> {{ welcomeMessage }} </span>
+  </h2>
+</div>
