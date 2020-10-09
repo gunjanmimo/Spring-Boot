@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ListTodosComponent } from './list-todos/list-todos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     LogoutComponent,
-    ListTodosComponent
+    ListTodosComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

@@ -1,14 +1,25 @@
+<p class="alert alert-success" *ngIf="message">{{ message }}</p>
 <table class="table">
   <tr>
-    <th>id</th>
-    <th>description</th>
-    <th>done</th>
-    <th>targetDate</th>
+    <th>Description</th>
+    <th>Done</th>
+    <th>Target Date</th>
+    <th>Actions</th>
   </tr>
   <tr *ngFor="let todo of todos">
-    <td>{{ todo.id }}</td>
     <td>{{ todo.description }}</td>
     <td>{{ todo.done | uppercase }}</td>
     <td>{{ todo.targetDate | date }}</td>
+    <td>
+      <button (click)="updateTodo(todo.id)" class="btn btn-primary m-2">
+        Edit
+      </button>
+      <button (click)="deleteTodo(todo.id)" class="btn btn-warning">
+        Delete
+      </button>
+    </td>
   </tr>
 </table>
+
+<h2>Add new task</h2>
+<button class="btn btn-primary center" (click)="addTodo()">Add new todo</button>

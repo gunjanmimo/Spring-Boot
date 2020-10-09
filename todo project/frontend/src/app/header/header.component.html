@@ -12,9 +12,12 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" routerLink=""
+    <div class="navbar-nav" *ngIf="userAuthenticationService.isUserLoggedIn()">
+      <a class="nav-item nav-link active" routerLink="/welcome/gunjan"
         >Home <span class="sr-only">(current)</span></a
+      >
+      <a class="nav-item nav-link active" routerLink="/todos"
+        >Todos <span class="sr-only">(current)</span></a
       >
     </div>
     <div class="navbar navbar-collapse justify-content-end">
