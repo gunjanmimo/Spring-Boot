@@ -1,0 +1,20 @@
+<div class="form-group">
+  <input
+    type="text"
+    name="description"
+    required="required"
+    [(ngModel)]="todo.description"
+    placeholder="description"
+    class="form-control"
+  />
+  <br />
+  <input
+    type="date"
+    name="targetDate"
+    required="required"
+    [ngModel]="todo.targetDate | date: 'yyyy-MM-dd'"
+    class="form-control"
+  />
+  <br />
+  <button class="btn btn-success" (click)="saveTodo()">Save</button>
+</div>
