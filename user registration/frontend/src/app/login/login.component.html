@@ -1,4 +1,5 @@
-<form #loginForm="ngForm" (ngSubmit)="loginUser()">
+<p class="alert alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+<form #loginForm="ngForm">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input
@@ -7,6 +8,7 @@
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
       name="email"
+      value="mimo123@gmail.com"
       autocomplete="email"
       placeholder="Enter email"
       [(ngModel)]="user.emailId"
@@ -20,10 +22,13 @@
       id="exampleInputPassword1"
       placeholder="Password"
       name="password"
+      value="abc12"
       autocomplete="current-password"
       [(ngModel)]="user.password"
     />
   </div>
 
-  <button type="submit" class="btn btn-primary">Log in</button>
+  <button type="submit" class="btn btn-primary" (click)="loginUser()">
+    Log in
+  </button>
 </form>
